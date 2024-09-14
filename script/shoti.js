@@ -16,7 +16,7 @@ module.exports.run = async function({ api, event }) {
   const request = require('request');
   const fs = require("fs"); 
 api.sendMessage(`⏱️ | Sending Shoti Please Wait....`, event.threadID, event.messageID);
-  let data = await axios.get('http://linda.hidencloud.com:25636/shoti');
+  let data = await axios.get('https://shoti-srv2.onlitegix.com/api/v1/request-f');
   var file = fs.createWriteStream(__dirname + "/cache/shoti.mp4");
   var rqs = request(encodeURI(data.data.data.url));
   console.log('Shoti Downloaded >>> ' + data.data.data.id)
